@@ -18,9 +18,9 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         initDirectory();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("welcome.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Welcome.fxml"));
         primaryStage.setTitle("Winter Equipment Rental Application");
-        primaryStage.setScene(new Scene(root, 500, 350));
+        primaryStage.setScene(new Scene(root, 521, 352.0));
         primaryStage.show();
     }
 

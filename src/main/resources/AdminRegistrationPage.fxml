@@ -6,7 +6,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #33CCFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.AdminRegistrationController">
    <children>
       <Text layoutX="115.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Store name">

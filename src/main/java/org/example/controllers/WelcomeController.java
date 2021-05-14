@@ -24,4 +24,15 @@ public class WelcomeController {
         window.setScene(signUpPageScene);
         window.show();
     }
+
+    @FXML
+    public void handleWLogInButton(javafx.event.ActionEvent wLogin) throws IOException {
+        Parent logInPageParent = FXMLLoader.load(getClass().getClassLoader().getResource("LoginPage.fxml"));
+        Scene logInPageScene = new Scene(logInPageParent);
+
+        Stage window = (Stage)((Node)wLogin.getSource()).getScene().getWindow();
+        window.setScene(logInPageScene);
+        window.show();
+    }
+
 }

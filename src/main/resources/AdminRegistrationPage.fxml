@@ -31,7 +31,7 @@
       <TextField fx:id="storename" layoutX="238.0" layoutY="100.0" prefHeight="25.0" prefWidth="235.0" />
       <TextField fx:id="phone" layoutX="238.0" layoutY="140.0" prefHeight="25.0" prefWidth="235.0" />
       <TextField fx:id="email" layoutX="238.0" layoutY="185.0" prefHeight="25.0" prefWidth="235.0" />
-      <TextField fx:id="saddress" layoutX="238.0" layoutY="223.0" prefHeight="25.0" prefWidth="235.0" />
+      <TextField fx:id="sadress" layoutX="238.0" layoutY="223.0" prefHeight="25.0" prefWidth="235.0" />
       <Button layoutX="421.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleDoneAction" text="Done">
          <font>
             <Font size="14.0" />

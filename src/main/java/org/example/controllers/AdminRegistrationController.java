@@ -29,7 +29,7 @@ public class AdminRegistrationController {
     private TextField email;
 
     @FXML
-    private TextField saddress;
+    private TextField sadress;
 
     @FXML
     private Text exepMessage;
@@ -41,14 +41,14 @@ public class AdminRegistrationController {
         try {
             String loggedUser=SignUpController.getLoggedUser();
             UserServices.checkNamefield(storename.getText());
-            UserServices.checkAdressField(saddress.getText());
+            UserServices.checkAdressField(sadress.getText());
             userRep = UserServices.getUserRepository();
             for(User user:userRep.find())
                 if(Objects.equals(loggedUser,user.getUsername())){
                     user.setName(storename.getText());
                     user.setEmail(email.getText());
                     user.setPhone(phone.getText());
-                    user.setAddress(saddress.getText());
+                    user.setAddress(sadress.getText());
                 }
 
             Parent administrationPage = FXMLLoader.load(getClass().getClassLoader().getResource("AdministrationPage.fxml"));

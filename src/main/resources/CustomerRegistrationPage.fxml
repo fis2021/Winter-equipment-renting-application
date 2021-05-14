@@ -23,13 +23,14 @@
                 <Font size="16.0" />
             </font>
         </Text>
-        <TextField id="cName" layoutX="238.0" layoutY="100.0" prefHeight="25.0" prefWidth="235.0" />
-        <TextField id="cPhone" layoutX="238.0" layoutY="140.0" prefHeight="25.0" prefWidth="235.0" />
-        <TextField id="cEmail" layoutX="238.0" layoutY="185.0" prefHeight="25.0" prefWidth="235.0" />
-        <Button layoutX="421.0" layoutY="305.0" mnemonicParsing="false" text="Done">
+        <TextField fx:id="cName" layoutX="238.0" layoutY="100.0" prefHeight="25.0" prefWidth="235.0" />
+        <TextField fx:id="cPhone" layoutX="238.0" layoutY="140.0" prefHeight="25.0" prefWidth="235.0" />
+        <TextField fx:id="cEmail" layoutX="238.0" layoutY="185.0" prefHeight="25.0" prefWidth="235.0" />
+        <Button layoutX="421.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleDoneAction" text="Done">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
+      <Text fx:id="exepMessage" fill="#d40d0d" layoutX="122.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" />
     </children>
 </AnchorPane>

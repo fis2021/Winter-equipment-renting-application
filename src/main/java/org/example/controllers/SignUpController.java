@@ -32,19 +32,25 @@ public class SignUpController {
     @FXML
     private Text exepMessage;
 
+
     @FXML
     public void initialize() {
         role.getItems().addAll("Customer", "Admin");
     }
 
+    private static String loggedUser;
     private String choosedRole;
 
+    public static String getLoggedUser() {
+        return loggedUser;
+    }
 
     @FXML
     public void handleSignUpAction(javafx.event.ActionEvent SignUp) throws Exception {
         try {
             UserServices.addUser(username.getText(), password.getText(), (String)role.getValue());
             choosedRole=(String) role.getValue();
+            loggedUser=UserServices.getLoggedUser(username.getText());
 
             if(choosedRole.equals("Admin")){
                 Parent adminPage = FXMLLoader.load(getClass().getClassLoader().getResource("AdminRegistrationPage.fxml"));

@@ -28,14 +28,15 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <TextField layoutX="238.0" layoutY="100.0" prefHeight="25.0" prefWidth="235.0" />
-      <TextField layoutX="238.0" layoutY="140.0" prefHeight="25.0" prefWidth="235.0" />
-      <TextField layoutX="238.0" layoutY="185.0" prefHeight="25.0" prefWidth="235.0" />
-      <TextField layoutX="238.0" layoutY="223.0" prefHeight="25.0" prefWidth="235.0" />
-      <Button layoutX="421.0" layoutY="305.0" mnemonicParsing="false" text="Done">
+      <TextField fx:id="storename" layoutX="238.0" layoutY="100.0" prefHeight="25.0" prefWidth="235.0" />
+      <TextField fx:id="phone" layoutX="238.0" layoutY="140.0" prefHeight="25.0" prefWidth="235.0" />
+      <TextField fx:id="email" layoutX="238.0" layoutY="185.0" prefHeight="25.0" prefWidth="235.0" />
+      <TextField fx:id="saddress" layoutX="238.0" layoutY="223.0" prefHeight="25.0" prefWidth="235.0" />
+      <Button layoutX="421.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleDoneAction" text="Done">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
+      <Text fx:id="exepMessage" fill="#d90a0a" layoutX="115.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>

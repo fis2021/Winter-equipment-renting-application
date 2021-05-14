@@ -5,6 +5,7 @@ package org.example.services;
         import org.example.exceptions.*;
         import org.example.Models.User;
 
+        import java.awt.*;
         import java.nio.charset.StandardCharsets;
         import java.security.MessageDigest;
         import java.security.NoSuchAlgorithmException;
@@ -87,6 +88,24 @@ public class UserServices {
         if ( passwordMatched == 0 )
             throw new InvalidPasswordException();
 
+    }
+
+    public static void checkNamefield(String name) throws noNameException {
+        if(Objects.equals(name,""))
+            throw new noNameException();
+    }
+
+    public static void checkAdressField(String adress) throws noAdressException{
+        if(Objects.equals(adress,""))
+            throw new noAdressException();
+    }
+
+    public static String getLoggedUser(String username){
+        for(User user:userRepository.find()){
+            if (Objects.equals(username, user.getUsername()))
+                return username;
+        }
+        return "";
     }
 
     private static MessageDigest getMessageDigest() {

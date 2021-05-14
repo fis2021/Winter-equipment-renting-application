@@ -8,9 +8,12 @@
     <artifactId>WERA</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>WERA</name>
+
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -87,7 +90,7 @@
                     <version>0.0.5</version>
                     <configuration>
                         <!--<mainClass>${main.class.name}</mainClass>-->
-                        <mainClass>org.fis.student.Main</mainClass>
+                        <mainClass>org.example.Main</mainClass>
                     </configuration>
                 </plugin>
             </plugins>

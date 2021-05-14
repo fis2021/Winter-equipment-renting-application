@@ -67,6 +67,28 @@ public class UserServices {
                     throw  new EmptyFieldsException();
     }
 
+    public static void verifyUserCredentials(String username,String password,String role) throws UsernameNotFoundException, InvalidRoleException, InvalidPasswordException {
+        int usernameMatched = 0;
+        int passwordMatched = 0;
+        int roleMatched = 0;
+        for(User user : userRepository.find()){
+            if(Objects.equals(username,user.getUsername())) {
+                usernameMatched = 1;
+                if(Objects.equals(role,user.getRole()))
+                    roleMatched = 1;
+            }
+            if(Objects.equals(encodePassword(username,password),user.getPassword()))
+                passwordMatched = 1;
+        }
+        if(usernameMatched == 0)
+            throw new UsernameNotFoundException();
+        if( roleMatched == 0 )
+            throw new InvalidRoleException();
+        if ( passwordMatched == 0 )
+            throw new InvalidPasswordException();
+
+    }
+
     private static MessageDigest getMessageDigest() {
         MessageDigest md;
         try {

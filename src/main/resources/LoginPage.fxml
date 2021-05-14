@@ -30,7 +30,7 @@
         </Text>
         <PasswordField fx:id="password" layoutX="196.0" layoutY="111.0" prefHeight="26.0" prefWidth="222.0" />
         <ChoiceBox fx:id="role" layoutX="196.0" layoutY="147.0" prefHeight="26.0" prefWidth="222.0" />
-        <Button layoutX="319.0" layoutY="244.0" mnemonicParsing="false"  prefHeight="26.0" prefWidth="69.0" text="Log in" />
+        <Button onAction="#handleLogInAction" layoutX="319.0" layoutY="244.0" mnemonicParsing="false"  prefHeight="26.0" prefWidth="69.0" text="Log in" />
         <ImageView fitHeight="101.0" fitWidth="174.0" layoutX="93.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@Picture3.png" />

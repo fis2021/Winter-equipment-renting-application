@@ -55,7 +55,11 @@ public class SignUpController {
 
             }
             else{
-
+                Parent adminPage = FXMLLoader.load(getClass().getClassLoader().getResource("CustomerRegistrationPage.fxml"));
+                Scene adminPageScene = new Scene(adminPage);
+                Stage window = (Stage) ((Node) SignUp.getSource()).getScene().getWindow();;
+                window.setScene(adminPageScene);
+                window.show();
             }
         } catch (UsernameAlreadyExistsException e) {
             exepMessage.setText("Username already exists!");

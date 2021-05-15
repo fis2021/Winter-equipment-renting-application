@@ -13,6 +13,8 @@ import org.example.Models.User;
 public class HomePageController {
     @FXML
     private Button profileButton;
+    @FXML
+    private Button viewStoresButton;
     private static ObjectRepository<User> userRep;
     String loggedUser=LogInController.getLoggedUser();
 
@@ -27,6 +29,21 @@ public class HomePageController {
         controller.set();
         //Stage stage = (Stage) (Stage) ((Node) myProfile.getSource()).getScene().getWindow();
         Stage stage = (Stage) (profileButton.getScene().getWindow());
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void handleViewStoresAction() throws Exception{
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(getClass().getClassLoader().getResource("ViewStoresPage.fxml"));
+        Parent parent = loader.load();
+        //Parent parent = loader.load(getClass().getClassLoader().getResource("MyProfileAdminPage.fxml"));
+        Scene scene = new Scene(parent);
+        ViewStoresController controller = loader.getController();
+        //controller();
+        //Stage stage = (Stage) (Stage) ((Node) myProfile.getSource()).getScene().getWindow();
+        Stage stage = (Stage) (viewStoresButton.getScene().getWindow());
         stage.setScene(scene);
         stage.show();
     }

@@ -33,4 +33,5 @@ public class AdministrationPageController {
         stage.setScene(scene);
         stage.show();
     }
+
 }

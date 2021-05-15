@@ -36,7 +36,6 @@ public class AdminRegistrationController {
 
     private static ObjectRepository<User> userRep;
 
-
     public void handleDoneAction(javafx.event.ActionEvent done) throws Exception{
         try {
             String loggedUser=SignUpController.getLoggedUser();
@@ -61,5 +60,45 @@ public class AdminRegistrationController {
         } catch (noAdressException e) {
             exepMessage.setText(e.getMessage());
         }
+    }
+
+    public String getName(){
+        String loggedUser=SignUpController.getLoggedUser();
+        userRep = UserServices.getUserRepository();
+        for(User user:userRep.find())
+            if(Objects.equals(loggedUser,user.getUsername())){
+                return user.getName();
+            }
+        return "";
+    }
+
+    public String getPhone(){
+        String loggedUser=SignUpController.getLoggedUser();
+        userRep = UserServices.getUserRepository();
+        for(User user:userRep.find())
+            if(Objects.equals(loggedUser,user.getUsername())){
+                return user.getPhone();
+            }
+        return "";
+    }
+
+    public String getEmail(){
+        String loggedUser=SignUpController.getLoggedUser();
+        userRep = UserServices.getUserRepository();
+        for(User user:userRep.find())
+            if(Objects.equals(loggedUser,user.getUsername())){
+                return user.getEmail();
+            }
+        return "";
+    }
+
+    public String getAdress(){
+        String loggedUser=SignUpController.getLoggedUser();
+        userRep = UserServices.getUserRepository();
+        for(User user:userRep.find())
+            if(Objects.equals(loggedUser,user.getUsername())){
+                return user.getAddress();
+            }
+        return "";
     }
 }

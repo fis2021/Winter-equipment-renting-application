@@ -31,12 +31,18 @@ public class LogInController {
     }
 
     private String choosedRole;
+    private static String loggedUser;
+
+    public static String getLoggedUser() {
+        return loggedUser;
+    }
 
     @FXML
     public void handleLogInAction(javafx.event.ActionEvent LogIn) throws Exception {
         try {
             UserServices.verifyUserCredentials(username.getText(),password.getText(),(String)role.getValue());
             choosedRole=(String) role.getValue();
+            loggedUser=UserServices.getLoggedUser(username.getText());
 
             if(choosedRole.equals("Admin")){
                 Parent administrationPage = FXMLLoader.load(getClass().getClassLoader().getResource("AdministrationPage.fxml"));

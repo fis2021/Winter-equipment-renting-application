@@ -44,10 +44,10 @@ public class CustomerRegistrationController {
                     user.setPhone(cPhone.getText());
                 }
 
-            Parent homePage = FXMLLoader.load(getClass().getClassLoader().getResource("HomePage.fxml"));
-            Scene homePageScene = new Scene(homePage);
+            Parent logInPage = FXMLLoader.load(getClass().getClassLoader().getResource("LoginPage.fxml"));
+            Scene logInPageScene = new Scene(logInPage);
             Stage window = (Stage) ((Node) done.getSource()).getScene().getWindow();;
-            window.setScene(homePageScene);
+            window.setScene(logInPageScene);
             window.show();
         } catch (noNameException e) {
             exepMessage.setText(e.getMessage());

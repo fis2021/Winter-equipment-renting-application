@@ -18,11 +18,11 @@ public class HomePageController {
     @FXML
     public void handleMyProfileAction() throws Exception{
         FXMLLoader loader=new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("MyProfileAdminPage.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("MyProfileCustomerPage.fxml"));
         Parent parent = loader.load();
         //Parent parent = loader.load(getClass().getClassLoader().getResource("MyProfileAdminPage.fxml"));
         Scene scene = new Scene(parent);
-        MyProfileAdminController controller = loader.getController();
+        MyProfileCustomerController controller = loader.getController();
         controller.set();
         //Stage stage = (Stage) (Stage) ((Node) myProfile.getSource()).getScene().getWindow();
         Stage stage = (Stage) (profileButton.getScene().getWindow());

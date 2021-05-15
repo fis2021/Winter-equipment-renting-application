@@ -68,5 +68,13 @@ public class LogInController {
         }
     }
 
+        @FXML
+        public void BackAction(javafx.event.ActionEvent back) throws Exception{
+            Parent parentPage = FXMLLoader.load(getClass().getClassLoader().getResource("Welcome.fxml"));
+            Scene PageScene = new Scene(parentPage);
+            Stage window = (Stage) ((Node) back.getSource()).getScene().getWindow();
+            window.setScene(PageScene);
+            window.show();
+        }
 
 }

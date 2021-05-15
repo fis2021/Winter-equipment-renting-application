@@ -50,7 +50,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Button layoutX="449.0" layoutY="303.0" mnemonicParsing="false" text="Edit" />
+      <Button onAction="#handleEditAction" layoutX="449.0" layoutY="303.0" mnemonicParsing="false" text="Edit" />
       <ImageView fitHeight="238.0" fitWidth="274.0" layoutX="-9.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Profile.png" />

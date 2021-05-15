@@ -16,6 +16,8 @@ import org.example.services.UserServices;
 
 import java.util.Objects;
 
+import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
+
 
 public class AdminRegistrationController {
 
@@ -48,11 +50,12 @@ public class AdminRegistrationController {
                     user.setEmail(email.getText());
                     user.setPhone(phone.getText());
                     user.setAddress(sadress.getText());
+                    userRep.update(eq("username",loggedUser),user);
                 }
 
             Parent logInPage = FXMLLoader.load(getClass().getClassLoader().getResource("LoginPage.fxml"));
             Scene logInPageScene = new Scene(logInPage);
-            Stage window = (Stage) ((Node) done.getSource()).getScene().getWindow();;
+            Stage window = (Stage) ((Node) done.getSource()).getScene().getWindow();
             window.setScene(logInPageScene);
             window.show();
         } catch (noNameException e) {

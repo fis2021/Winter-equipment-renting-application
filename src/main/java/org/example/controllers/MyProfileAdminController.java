@@ -52,6 +52,15 @@ public class MyProfileAdminController {
         window.show();
     }
 
+    @FXML
+    public void HomeAction(javafx.event.ActionEvent home) throws Exception{
+        Parent parentPage = FXMLLoader.load(getClass().getClassLoader().getResource("AdministrationPage.fxml"));
+        Scene PageScene = new Scene(parentPage);
+        Stage window = (Stage) ((Node) home.getSource()).getScene().getWindow();;
+        window.setScene(PageScene);
+        window.show();
+    }
+
     public void setName(String name) {
         this.name.setText(name);
     }

@@ -22,7 +22,7 @@ public class AdministrationPageController {
     @FXML
     public void handleMyProfileAction() throws Exception{
         FXMLLoader loader=new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("MyProfileAdminPage.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("MyProfileCustomerPage.fxml"));
         Parent parent = loader.load();
         //Parent parent = loader.load(getClass().getClassLoader().getResource("MyProfileAdminPage.fxml"));
         Scene scene = new Scene(parent);

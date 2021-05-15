@@ -16,6 +16,8 @@ import org.example.services.UserServices;
 
 import java.util.Objects;
 
+import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
+
 public class CustomerRegistrationController {
     @FXML
     private TextField cName;
@@ -42,6 +44,7 @@ public class CustomerRegistrationController {
                     user.setName(cName.getText());
                     user.setEmail(cEmail.getText());
                     user.setPhone(cPhone.getText());
+                    userRep.update(eq("username",loggedUser),user);
                 }
 
             Parent logInPage = FXMLLoader.load(getClass().getClassLoader().getResource("LoginPage.fxml"));

@@ -51,10 +51,10 @@ public class AdminRegistrationController {
                     user.setAddress(sadress.getText());
                 }
 
-            Parent administrationPage = FXMLLoader.load(getClass().getClassLoader().getResource("AdministrationPage.fxml"));
-            Scene administrationPageScene = new Scene(administrationPage);
+            Parent logInPage = FXMLLoader.load(getClass().getClassLoader().getResource("LoginPage.fxml"));
+            Scene logInPageScene = new Scene(logInPage);
             Stage window = (Stage) ((Node) done.getSource()).getScene().getWindow();;
-            window.setScene(administrationPageScene);
+            window.setScene(logInPageScene);
             window.show();
         } catch (noNameException e) {
             exepMessage.setText(e.getMessage());

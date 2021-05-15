@@ -15,6 +15,7 @@
             <Image url="@Admin.png" />
          </image>
         </ImageView>
+        <Button onAction="#LogoffAction" layoutX="357.0" layoutY="24.0" mnemonicParsing="false" text="Log off" />
     </children>
 
 </AnchorPane>

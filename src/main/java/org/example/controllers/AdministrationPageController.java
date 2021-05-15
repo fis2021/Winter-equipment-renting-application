@@ -34,4 +34,12 @@ public class AdministrationPageController {
         stage.show();
     }
 
+    @FXML
+    public void LogoffAction(javafx.event.ActionEvent out) throws Exception{
+        Parent parentPage = FXMLLoader.load(getClass().getClassLoader().getResource("LoginPage.fxml"));
+        Scene PageScene = new Scene(parentPage);
+        Stage window = (Stage) ((Node) out.getSource()).getScene().getWindow();
+        window.setScene(PageScene);
+        window.show();
+    }
 }

@@ -5,16 +5,16 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="263.0" prefWidth="430.0" style="-fx-background-color: #33CCFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.HomePageController">
    <children>
       <Button fx:id="myRequestsButton" layoutX="276.0" layoutY="165.0" mnemonicParsing="false" text="My requests" />
       <Button fx:id="viewStoresButton" layoutX="76.0" layoutY="165.0" mnemonicParsing="false" text="View stores" />
-      <Button fx:id="profileButton" onAction="#handleMyProfileAction" layoutX="190.0" layoutY="205.0" mnemonicParsing="false" text="Profile" />
+      <Button fx:id="profileButton" layoutX="190.0" layoutY="205.0" mnemonicParsing="false" onAction="#handleMyProfileAction" text="Profile" />
       <ImageView fitHeight="157.0" fitWidth="163.0" layoutX="137.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@homeicon.png" />
          </image>
       </ImageView>
+      <Button onAction="#LogoffAction" layoutX="357.0" layoutY="24.0" mnemonicParsing="false" text="Log off" />
    </children>
 </AnchorPane>

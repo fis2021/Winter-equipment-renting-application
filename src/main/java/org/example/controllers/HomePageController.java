@@ -2,6 +2,7 @@ package org.example.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -28,6 +29,15 @@ public class HomePageController {
         Stage stage = (Stage) (profileButton.getScene().getWindow());
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    public void LogoffAction(javafx.event.ActionEvent out) throws Exception{
+        Parent parentPage = FXMLLoader.load(getClass().getClassLoader().getResource("LoginPage.fxml"));
+        Scene PageScene = new Scene(parentPage);
+        Stage window = (Stage) ((Node) out.getSource()).getScene().getWindow();
+        window.setScene(PageScene);
+        window.show();
     }
 
 }

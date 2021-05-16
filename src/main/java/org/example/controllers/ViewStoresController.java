@@ -7,25 +7,30 @@ import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 //import jdk.vm.ci.meta.Value;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+import org.dizitart.no2.objects.ObjectRepository;
+import org.example.Models.Item;
 import org.example.Models.User;
 import org.example.services.UserServices;
 //import sun.jvm.hotspot.utilities.Observable;
 
+import java.io.IOException;
 import java.net.URL;
-import java.util.Locale;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.function.Predicate;
+
+import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
 
 public class ViewStoresController implements Initializable {
     @FXML
@@ -42,6 +47,8 @@ public class ViewStoresController implements Initializable {
     private TableColumn<User, String> phone;
 
     private final ObservableList<User> dataList = FXCollections.observableArrayList();
+    private String loggedUser = LogInController.getLoggedUser();
+    private static ObjectRepository<User> userRep;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -144,6 +151,16 @@ public class ViewStoresController implements Initializable {
         Stage window = (Stage) ((Node) home.getSource()).getScene().getWindow();;
         window.setScene(PageScene);
         window.show();
+    }
+
+    @FXML
+    public void selectStoreAction(javafx.event.ActionEvent select) throws Exception{
+        Parent parentPage = FXMLLoader.load(getClass().getClassLoader().getResource("StorePage.fxml"));
+        Scene PageScene = new Scene(parentPage);
+        Stage window = (Stage) ((Node) select.getSource()).getScene().getWindow();;
+        window.setScene(PageScene);
+        window.show();
+
     }
 
 }

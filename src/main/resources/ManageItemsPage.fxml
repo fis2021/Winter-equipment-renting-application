@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="641.0" style="-fx-background-color: #33CCFF;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ManageItemsController">
+
+    <children>
+        <TableView fx:id="itemsTable" layoutX="34.0" layoutY="157.0" prefHeight="265.0" prefWidth="574.0" style="-fx-background-color: #B3ECFF;">
+            <columns>
+                <TableColumn fx:id="name" maxWidth="194.0" prefWidth="163.0" style="-fx-alignment: center;" text="Name" />
+                <TableColumn fx:id="size" maxWidth="215.0" prefWidth="125.0" style="-fx-alignment: center;" text="Size" />
+                <TableColumn fx:id="price" maxWidth="247.0" prefWidth="173.0" style="-fx-alignment: center;" text="Price RON/Day" />
+                <TableColumn fx:id="editCol" maxWidth="257.0" minWidth="0.0" prefWidth="112.0" style="-fx-alignment: center;" text="Edit" />
+            </columns>
+        </TableView>
+        <Pane layoutY="59.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+        <Text layoutX="26.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage items" wrappingWidth="245.13671875">
+            <font>
+                <Font name="Bauhaus 93" size="32.0" />
+            </font>
+        </Text>
+        <HBox alignment="CENTER" layoutX="602.0" layoutY="-1.0" prefHeight="36.0" prefWidth="37.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <HBox alignment="CENTER_LEFT" layoutX="34.0" layoutY="73.0" prefHeight="76.0" prefWidth="200.0">
+            <children>
+                <Button text="add">
+                    <HBox.margin>
+                        <Insets right="10.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+          <Button layoutX="563.0" layoutY="20.0" text="Close" />
+    </children>
+</AnchorPane>

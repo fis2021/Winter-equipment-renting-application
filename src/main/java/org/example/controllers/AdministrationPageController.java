@@ -42,4 +42,13 @@ public class AdministrationPageController {
         window.setScene(PageScene);
         window.show();
     }
+
+    @FXML
+    public void manageItemsAction(javafx.event.ActionEvent act) throws Exception{
+        Parent parentPage = FXMLLoader.load(getClass().getClassLoader().getResource("ManageItemsPage.fxml"));
+        Scene PageScene = new Scene(parentPage);
+        Stage window = (Stage) ((Node) act.getSource()).getScene().getWindow();
+        window.setScene(PageScene);
+        window.show();
+    }
 }

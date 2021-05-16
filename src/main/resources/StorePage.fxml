@@ -18,7 +18,7 @@
       <Button layoutX="51.0" layoutY="170.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="View Items" />
       <Button layoutX="51.0" layoutY="223.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="Manage Cart" />
       <Button layoutX="51.0" layoutY="277.0" mnemonicParsing="false" text="Create request" />
-      <Button layoutX="31.0" layoutY="462.0" mnemonicParsing="false" text="Back" />
+      <Button onAction="#BackAction" layoutX="31.0" layoutY="462.0" mnemonicParsing="false" text="Back" />
       <Pane layoutX="184.0" layoutY="80.0" prefHeight="419.0" prefWidth="527.0" />
     </children>
 </AnchorPane>

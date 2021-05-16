@@ -2,6 +2,7 @@ package org.example.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -161,5 +162,12 @@ public class ManageItemsController implements Initializable {
 
 
     }
-
+    @FXML
+    public void addItemAction(javafx.event.ActionEvent addForm) throws Exception {
+        Parent parentPage = FXMLLoader.load(getClass().getClassLoader().getResource("ItemForm.fxml"));
+        Scene PageScene = new Scene(parentPage);
+        Stage window = (Stage) ((Node) addForm.getSource()).getScene().getWindow();
+        window.setScene(PageScene);
+        window.show();
+    }
 }

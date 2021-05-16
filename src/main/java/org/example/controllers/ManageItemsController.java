@@ -171,4 +171,13 @@ public class ManageItemsController implements Initializable {
         window.setScene(PageScene);
         window.show();
     }
+
+    @FXML
+    public void HomeAction(javafx.event.ActionEvent home) throws Exception{
+        Parent parentPage = FXMLLoader.load(getClass().getClassLoader().getResource("HomePage.fxml"));
+        Scene PageScene = new Scene(parentPage);
+        Stage window = (Stage) ((Node) home.getSource()).getScene().getWindow();;
+        window.setScene(PageScene);
+        window.show();
+    }
 }

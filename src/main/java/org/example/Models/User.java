@@ -2,6 +2,7 @@ package org.example.Models;
 
 import org.dizitart.no2.objects.Id;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class User {
@@ -13,6 +14,7 @@ public class User {
     private String address;
     private String phone;
     private String email;
+    private ArrayList<Item> items = new ArrayList<Item>();
 
     public User(String username, String password, String role) {
         this.username = username;
@@ -96,5 +98,13 @@ public class User {
         result = (31 * result) + ((password != null) ? password.hashCode() : 0);
         result = (31 * result) + ((role != null) ? role.hashCode() : 0);
         return result;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
     }
 }

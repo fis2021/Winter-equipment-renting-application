@@ -1,7 +1,12 @@
 package org.example.controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.example.Models.Item;
 import org.example.Models.User;
@@ -62,6 +67,12 @@ public class ItemFormController {
                     userRep.update(eq("username",loggedUser),user);
                 }
             }
+            Parent parentPage = FXMLLoader.load(getClass().getClassLoader().getResource("ManageItemsPage.fxml"));
+            Scene PageScene = new Scene(parentPage);
+            Stage window = (Stage) ((Node) update.getSource()).getScene().getWindow();
+            window.setScene(PageScene);
+            window.show();
+
         } catch (noNameException e) {
             exepMessage.setText("Please complete all fields!");
         }

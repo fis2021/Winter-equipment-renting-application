@@ -1,5 +1,7 @@
 package org.example.controllers;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,10 +11,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -23,6 +23,7 @@ import org.example.Models.Item;
 import org.example.Models.User;
 import org.example.services.UserServices;
 import javafx.geometry.Insets;
+
 import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
@@ -47,7 +48,7 @@ public class ManageItemsController implements Initializable {
     @FXML
     private TableColumn<Item, String> editCol;
 
-    private String loggedUser = LogInController.getLoggedUser();;
+    private String loggedUser = LogInController.getLoggedUser();
     private static ObjectRepository<User> userRep;
 
 
@@ -99,29 +100,29 @@ public class ManageItemsController implements Initializable {
                         Button editIcon = new Button("Edit");
 
                         deleteIcon.setOnMouseClicked((javafx.scene.input.MouseEvent event) -> {
-                            sel_item=itemsTable.getSelectionModel().getSelectedItem();
+                            if(itemsTable.getSelectionModel().getSelectedItem() != null) {
+                                sel_item = itemsTable.getSelectionModel().getSelectedItem();
 
-                            userRep = UserServices.getUserRepository();
-                            for (User user:userRep.find()){
-                                if(Objects.equals(user.getUsername(),loggedUser)){
-                                    ArrayList<Item> items_aux = user.getItems();
-                                    Iterator<Item> it = items_aux.iterator();
+                                userRep = UserServices.getUserRepository();
+                                for (User user : userRep.find()) {
+                                    if (Objects.equals(user.getUsername(), loggedUser)) {
+                                        ArrayList<Item> items_aux = user.getItems();
+                                        Iterator<Item> it = items_aux.iterator();
 
-                                    while(it.hasNext()){
-                                        Item i = it.next();
-                                        if(Objects.equals(i.getName(),sel_item.getName())){
-                                            items_aux.remove(i);
-                                            user.setItems(items_aux);
-                                            userRep.update(eq("username",loggedUser),user);
+                                        while (it.hasNext()) {
+                                            Item i = it.next();
+                                            if (Objects.equals(i.getName(), sel_item.getName())) {
+                                                items_aux.remove(i);
+                                                user.setItems(items_aux);
+                                                userRep.update(eq("username", loggedUser), user);
 
+                                            }
                                         }
+
+
                                     }
-
-
                                 }
                             }
-
-
                         });
                         editIcon.setOnMouseClicked((MouseEvent event) -> {
 

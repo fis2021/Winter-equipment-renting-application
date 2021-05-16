@@ -55,7 +55,7 @@ public class ManageItemsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        //loadDate();
+        loadDate();
     }
     Item sel_item=null;
 
